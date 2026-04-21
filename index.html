@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SB-Solutions – Websites, SEO & Social Media | Mödling, NÖ</title>
+<meta name="description" content="SB-Solutions: Professionelle Websites, SEO-Optimierung und Social Media Management für kleine Unternehmen in Mödling und Niederösterreich. Jetzt kostenlos beraten lassen.">
+<meta name="keywords" content="Webdesign Mödling, SEO Niederösterreich, Social Media Agentur NÖ, Website erstellen lassen, SB-Solutions">
+<meta name="author" content="SB-Solutions, Bruno">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="SB-Solutions – Digitale Lösungen für lokale Unternehmen">
+<meta property="og:description" content="Moderne Websites, SEO & Social Media für Unternehmen in Mödling und Niederösterreich.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.sb-solutions.at">
+<meta property="og:locale" content="de_AT">
+<link rel="canonical" href="https://www.sb-solutions.at">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"SB-Solutions",
+  "description":"Webdesign, SEO und Social Media Management für kleine Unternehmen in Mödling und Niederösterreich.",
+  "url":"https://www.sb-solutions.at",
+  "email":"office@sb-solutions.at",
+  "address":{"@type":"PostalAddress","addressLocality":"Mödling","addressRegion":"Niederösterreich","addressCountry":"AT"},
+  "areaServed":"Niederösterreich",
+  "serviceType":["Webdesign","SEO","Social Media Management"]
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#090b10;--bg2:#0f1219;--bg3:#151820;
+  --accent:#4f7fff;--accent2:#7aa3ff;--accent3:#a8c4ff;
+  --text:#eef1fa;--muted:#7a839e;--border:#1e2333;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none}
+
+/* CURSOR GLOW */
+.cursor-glow{pointer-events:none;position:fixed;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(79,127,255,0.07) 0%,transparent 70%);transform:translate(-50%,-50%);transition:left 0.12s ease,top 0.12s ease;z-index:0;left:-999px;top:-999px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;transition:background 0.3s,border-color 0.3s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(9,11,16,0.95);backdrop-filter:blur(12px);border-color:var(--border)}
+.logo{font-size:1.25rem;font-weight:700;letter-spacing:0.03em;display:flex;align-items:center;gap:0.4rem}
+.logo-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(79,127,255,0.5)}50%{box-shadow:0 0 0 6px rgba(79,127,255,0)}}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);font-size:0.9rem;transition:color 0.2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--accent);transition:width 0.3s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--accent);color:#fff;padding:0.5rem 1.2rem;border-radius:7px;font-size:0.88rem;font-weight:500;transition:all 0.2s;border:none;cursor:pointer}
+.nav-cta:hover{background:var(--accent2);transform:translateY(-1px);box-shadow:0 4px 20px rgba(79,127,255,0.35)}
+
+section{padding:6rem 2rem;position:relative}
+.container{max-width:1000px;margin:0 auto}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 5rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.18;animation:float 8s ease-in-out infinite}
+.orb1{width:500px;height:500px;background:#4f7fff;top:-100px;left:-100px;animation-delay:0s}
+.orb2{width:400px;height:400px;background:#7b5fff;bottom:-80px;right:-80px;animation-delay:3s}
+.orb3{width:300px;height:300px;background:#4fafff;top:40%;left:60%;animation-delay:5s}
+@keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
+.grid-lines{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:0.3;mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%)}
+.hero-content{position:relative;z-index:1}
+.badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(79,127,255,0.1);border:1px solid rgba(79,127,255,0.3);color:var(--accent2);font-size:0.78rem;padding:0.35rem 1rem;border-radius:20px;margin-bottom:2rem;letter-spacing:0.04em;animation:fadeDown 0.8s ease both}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+h1{font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem;animation:fadeUp 0.9s 0.2s ease both}
+h1 .line2{display:block;background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-sub{font-size:1.1rem;color:var(--muted);max-width:560px;margin:0 auto 2.5rem;animation:fadeUp 0.9s 0.35s ease both}
+.btn-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.9s 0.5s ease both}
+.btn-primary{background:var(--accent);color:#fff;padding:0.85rem 2.2rem;border-radius:9px;font-weight:500;font-size:0.95rem;border:none;cursor:pointer;transition:all 0.25s;position:relative;overflow:hidden}
+.btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,0.1),transparent);transform:translateX(-100%);transition:transform 0.4s}
+.btn-primary:hover::before{transform:translateX(100%)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(79,127,255,0.4)}
+.btn-secondary{background:transparent;color:var(--text);padding:0.85rem 2.2rem;border-radius:9px;font-weight:500;font-size:0.95rem;border:1px solid var(--border);cursor:pointer;transition:all 0.25s}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;animation:fadeUp 1s 1s ease both;cursor:pointer}
+.hero-scroll span{font-size:0.75rem;color:var(--muted);letter-spacing:0.08em}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--accent),transparent);animation:scrollLine 1.5s ease-in-out infinite}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* MARQUEE */
+.marquee-wrap{padding:1.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2);overflow:hidden}
+.marquee-track{display:flex;gap:3rem;animation:marquee 22s linear infinite;width:max-content}
+.marquee-item{display:flex;align-items:center;gap:0.7rem;font-size:0.85rem;color:var(--muted);white-space:nowrap;padding:0 0.5rem}
+.marquee-icon{color:var(--accent);font-size:1rem}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* REVEAL ANIMATION */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:600px){
+  .reveal{opacity:1;transform:none;transition:none}
+}
+.reveal-delay1{transition-delay:0.1s}
+.reveal-delay2{transition-delay:0.2s}
+.reveal-delay3{transition-delay:0.3s}
+
+/* SECTION HEADER */
+.section-label{font-size:0.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.7rem;display:flex;align-items:center;gap:0.5rem}
+.section-label::before{content:'';width:20px;height:1px;background:var(--accent)}
+h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;margin-bottom:1rem;line-height:1.2}
+.section-sub{color:var(--muted);max-width:520px;margin-bottom:3rem;font-size:0.95rem}
+
+/* SERVICES */
+#services{background:var(--bg2)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.service-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:2rem;transition:all 0.35s;position:relative;overflow:hidden;cursor:default}
+.service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(79,127,255,0.06),transparent);opacity:0;transition:opacity 0.35s}
+.service-card:hover{border-color:rgba(79,127,255,0.4);transform:translateY(-5px);box-shadow:0 12px 40px rgba(79,127,255,0.12)}
+.service-card:hover::before{opacity:1}
+.service-icon{width:48px;height:48px;background:rgba(79,127,255,0.1);border:1px solid rgba(79,127,255,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.3rem;transition:all 0.3s}
+.service-card:hover .service-icon{background:rgba(79,127,255,0.2);transform:scale(1.08)}
+.service-icon svg{width:22px;height:22px;fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.service-card h3{font-size:1.08rem;font-weight:600;margin-bottom:0.7rem}
+.service-card p{font-size:0.88rem;color:var(--muted);line-height:1.65}
+.service-tag{display:inline-block;margin-top:1rem;font-size:0.75rem;color:var(--accent);background:rgba(79,127,255,0.1);padding:0.2rem 0.7rem;border-radius:20px}
+
+/* ÜBER MICH */
+#ueber-mich{background:var(--bg)}
+.ueber-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:center}
+@media(max-width:700px){.ueber-wrap{grid-template-columns:1fr;gap:2.5rem;text-align:center}.section-label{justify-content:center}.ueber-stats{justify-content:center}}
+.ueber-img-wrap{position:relative;width:280px;height:320px;flex-shrink:0;margin:0 auto}
+.ueber-img{width:100%;height:100%;object-fit:cover;border-radius:20px;position:relative;z-index:1;display:block}
+.ueber-img-ring{position:absolute;inset:-10px;border-radius:26px;border:1px solid rgba(79,127,255,0.25);z-index:0;animation:ringPulse 3s ease-in-out infinite}
+@keyframes ringPulse{0%,100%{opacity:0.4;transform:scale(1)}50%{opacity:1;transform:scale(1.02)}}
+.ueber-badge-float{position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:0.78rem;font-weight:500;padding:0.35rem 1.1rem;border-radius:20px;white-space:nowrap;z-index:2;letter-spacing:0.03em}
+.ueber-stats{display:flex;gap:0.7rem;flex-wrap:wrap;margin-top:1.5rem}
+.ueber-stat{background:rgba(79,127,255,0.08);border:1px solid rgba(79,127,255,0.2);border-radius:8px;padding:0.4rem 1rem}
+.ueber-stat span{font-size:0.82rem;color:var(--accent2)}
+
+/* NUMBERS */
+#usp{text-align:center}
+.usp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;margin-top:3rem}
+.usp-item{padding:2rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
+.usp-item:hover{border-color:rgba(79,127,255,0.35);transform:translateY(-4px)}
+.usp-num{font-size:2.6rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.5rem;display:block}
+.usp-item p{font-size:0.85rem;color:var(--muted);line-height:1.5}
+
+/* PAKETE */
+#pakete{background:var(--bg2)}
+.pakete-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.5rem}
+.paket-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:2rem;position:relative;transition:all 0.35s}
+.paket-card:hover{transform:translateY(-5px)}
+.paket-card.featured{border-color:rgba(79,127,255,0.5);background:linear-gradient(160deg,rgba(79,127,255,0.06),var(--bg3))}
+.paket-card.featured:hover{box-shadow:0 14px 50px rgba(79,127,255,0.18)}
+.featured-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:0.72rem;padding:0.25rem 1rem;border-radius:20px;font-weight:500;white-space:nowrap;letter-spacing:0.04em}
+.paket-name{font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem}
+.paket-price{font-size:2.1rem;font-weight:700;margin-bottom:0.3rem;color:var(--text)}
+.paket-price span{font-size:0.88rem;font-weight:400;color:var(--muted)}
+.paket-desc{font-size:0.87rem;color:var(--muted);margin-bottom:1.3rem;padding-bottom:1.3rem;border-bottom:1px solid var(--border)}
+.paket-features{list-style:none;margin-bottom:1.8rem}
+.paket-features li{font-size:0.87rem;color:var(--muted);padding:0.35rem 0;display:flex;gap:0.6rem;align-items:flex-start;border-bottom:1px solid rgba(255,255,255,0.03)}
+.check{color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px}
+.btn-paket{width:100%;padding:0.75rem;border-radius:9px;font-size:0.9rem;font-weight:500;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text);transition:all 0.25s}
+.btn-paket:hover{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-1px)}
+.paket-card.featured .btn-paket{background:var(--accent);border-color:var(--accent);color:#fff}
+.paket-card.featured .btn-paket:hover{background:var(--accent2)}
+
+/* PROZESS */
+#prozess .prozess-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-top:3rem;position:relative}
+.prozess-steps::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;background:linear-gradient(to right,transparent,var(--border),var(--border),transparent);z-index:0}
+.prozess-step{text-align:center;padding:0 1.5rem;position:relative;z-index:1}
+.step-num{width:56px;height:56px;border-radius:50%;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:1rem;font-weight:600;color:var(--accent);transition:all 0.3s}
+.prozess-step:hover .step-num{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 0 20px rgba(79,127,255,0.4)}
+.prozess-step h3{font-size:0.95rem;font-weight:600;margin-bottom:0.4rem}
+.prozess-step p{font-size:0.83rem;color:var(--muted);line-height:1.5}
+
+/* KONTAKT */
+#kontakt .kontakt-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:3.5rem;align-items:start}
+@media(max-width:700px){#kontakt .kontakt-wrap{grid-template-columns:1fr}}
+.kontakt-info h2{margin-bottom:1rem}
+.kontakt-info p{color:var(--muted);margin-bottom:2rem;font-size:0.95rem}
+.kontakt-detail{display:flex;gap:0.8rem;align-items:center;margin-bottom:1rem;font-size:0.9rem;color:var(--muted);padding:0.7rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:9px;transition:border-color 0.2s}
+.kontakt-detail:hover{border-color:rgba(79,127,255,0.3)}
+.kd-icon{width:32px;height:32px;background:rgba(79,127,255,0.1);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.9rem}
+.kontakt-form{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:2.2rem}
+.form-group{margin-bottom:1.2rem}
+label{display:block;font-size:0.82rem;color:var(--muted);margin-bottom:0.45rem;letter-spacing:0.02em}
+input,textarea{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.7rem 1rem;color:var(--text);font-size:0.9rem;font-family:inherit;transition:border-color 0.2s,box-shadow 0.2s;outline:none}
+input:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(79,127,255,0.1)}
+textarea{min-height:120px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:480px){.form-row{grid-template-columns:1fr}}
+.form-submit{width:100%;padding:0.85rem;background:var(--accent);color:#fff;border:none;border-radius:9px;font-size:0.95rem;font-weight:500;cursor:pointer;transition:all 0.25s;position:relative;overflow:hidden}
+.form-submit::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,0.12),transparent);transform:translateX(-100%);transition:transform 0.4s}
+.form-submit:hover::before{transform:translateX(100%)}
+.form-submit:hover{background:var(--accent2);transform:translateY(-1px);box-shadow:0 6px 24px rgba(79,127,255,0.35)}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 2rem}
+.footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:0.82rem;color:var(--muted)}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-size:0.82rem;color:var(--muted);transition:color 0.2s}
+.footer-links a:hover{color:var(--accent)}
+
+/* MODAL */
+
+.modal h2{font-size:1.4rem;margin-bottom:1.5rem}
+.modal h3{font-size:0.9rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin:1.5rem 0 0.5rem}
+.modal p,.modal li{font-size:0.87rem;color:var(--muted);line-height:1.75}
+.modal ul{padding-left:1.2rem;margin-top:0.4rem}
+.modal-close{float:right;background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--muted);width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:all 0.2s}
+.modal-close:hover{background:var(--border);color:var(--text)}
+
+@media(max-width:600px){
+  .nav-links{display:none}
+  nav{padding:0 1rem}
+  section{padding:4rem 1rem}
+  h1{font-size:2rem}
+  .hero-sub{font-size:0.95rem}
+  .btn-row{flex-direction:column;align-items:center}
+  .btn-primary,.btn-secondary{width:100%;max-width:320px;text-align:center}
+  .services-grid,.pakete-grid,.usp-grid{grid-template-columns:1fr}
+  .prozess-steps{grid-template-columns:1fr 1fr;gap:1.5rem}
+  .prozess-steps::before{display:none}
+  .kontakt-wrap{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .kontakt-form{padding:1.5rem}
+  .footer-inner{flex-direction:column;text-align:center}
+  .dl-bar{bottom:1rem;right:1rem}
+  .dl-btn{font-size:0.8rem;padding:0.6rem 1rem}
+  .paket-card.featured{margin-top:0.8rem}
+  .marquee-wrap{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav id="navbar">
+  <div class="logo"><span class="logo-dot"></span>SB<span>-Solutions</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Leistungen</a></li>
+    <li><a href="#ueber-mich">Über mich</a></li>
+    <li><a href="#pakete">Pakete</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="#kontakt"><button class="nav-cta">Beratung anfragen</button></a>
+</nav>
+
+<section id="hero">
+  <div class="hero-bg">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="grid-lines"></div>
+  </div>
+  <div class="hero-content">
+    <div class="badge"><span class="badge-dot"></span>Digitalagentur · Mödling &amp; Niederösterreich</div>
+    <h1>Ihr Unternehmen.<br><span class="line2">Digital auf Kurs.</span></h1>
+    <p class="hero-sub">SB-Solutions bringt kleine Unternehmen online nach vorne – mit modernen Websites, gezieltem SEO und wirkungsvollem Social Media.</p>
+    <div class="btn-row">
+      <a href="#kontakt"><button class="btn-primary">Kostenlos beraten lassen →</button></a>
+      <a href="#pakete"><button class="btn-secondary">Pakete ansehen</button></a>
+    </div>
+  </div>
+
+</section>
+
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-icon">◆</span> Webdesign &amp; Entwicklung</div>
+    <div class="marquee-item"><span class="marquee-icon">◆</span> SEO-Optimierung</div>
+    <div class="marquee-item"><span class="marquee-icon">◆</span> Social Media Management</div>
+    <div class="marquee-item"><span class="marquee-icon">◆</span> Google Business</div>
+    <div class="marquee-item"><span class="marquee-icon">◆</span> Content-Strategie</div>
+    <div class="marquee-item"><span class="marquee-icon">◆</span> Lokales Marketing</div>
+    <div class="marquee-item"><span class="marquee-icon">◆</span> Webdesign &amp; Entwicklung</div>
+    <div class="marquee-item"><span class="marquee-icon">◆</span> SEO-Optimierung</div>
+    <div class="marquee-item"><span class="marquee-icon">◆</span> Social Media Management</div>
+    <div class="marquee-item"><span class="marquee-icon">◆</span> Google Business</div>
+    <div class="marquee-item"><span class="marquee-icon">◆</span> Content-Strategie</div>
+    <div class="marquee-item"><span class="marquee-icon">◆</span> Lokales Marketing</div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="container">
+    <div class="section-label reveal">Leistungen</div>
+    <h2 class="reveal">Was ich für Sie tue</h2>
+    <p class="section-sub reveal">Von der ersten Website bis zur laufenden digitalen Betreuung – alles aus einer Hand, persönlich und zuverlässig.</p>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay1">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>
+        </div>
+        <h3>Website-Erstellung</h3>
+        <p>Moderne, mobiloptimierte Websites, die Ihr Unternehmen überzeugend repräsentieren. Schnell geladen, sicher und auf Conversions ausgelegt.</p>
+        <span class="service-tag">ab €490</span>
+      </div>
+      <div class="service-card reveal reveal-delay2">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3>SEO-Optimierung</h3>
+        <p>Mehr Sichtbarkeit in Google für Ihre Region. Technische Optimierung, lokale Keywords und strukturierte Daten für nachhaltige Reichweite.</p>
+        <span class="service-tag">inkl. in Paketen</span>
+      </div>
+      <div class="service-card reveal reveal-delay3">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </div>
+        <h3>Social Media Management</h3>
+        <p>Professionelle Betreuung Ihrer Kanäle – von der Contentstrategie bis zum fertigen Post. Damit Ihre Marke online präsent und lebendig bleibt.</p>
+        <span class="service-tag">ab €149/mo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="usp">
+  <div class="container" style="text-align:center">
+    <div class="section-label reveal" style="justify-content:center">Zahlen</div>
+    <h2 class="reveal">Was Sie erwarten dürfen</h2>
+    <div class="usp-grid">
+      <div class="usp-item reveal reveal-delay1"><span class="usp-num">~14</span><p>Tage bis zur fertigen Website</p></div>
+      <div class="usp-item reveal reveal-delay2"><span class="usp-num">1:1</span><p>Persönlicher Ansprechpartner – immer direkt erreichbar</p></div>
+      <div class="usp-item reveal reveal-delay3"><span class="usp-num">NÖ</span><p>Fokus auf Mödling &amp; Niederösterreich</p></div>
+      <div class="usp-item reveal"><span class="usp-num">∞</span><p>Revisionen bis Sie zu 100% zufrieden sind</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ueber-mich">
+  <div class="container">
+    <div class="ueber-wrap">
+      <div class="ueber-img-wrap reveal">
+        <div class="ueber-img-ring"></div>
+        <img src="bruno.png" alt="Bruno Schartel – Geschäftsführer SB-Solutions" class="ueber-img">
+        <div class="ueber-badge-float">Gründer &amp; GF</div>
+      </div>
+      <div class="ueber-text reveal reveal-delay2">
+        <div class="section-label">Über mich</div>
+        <h2>Hinter SB-Solutions<br>steckt ein Mensch.</h2>
+        <p style="color:var(--muted);font-size:0.95rem;margin-bottom:1.2rem;line-height:1.75">Ich bin Bruno Schartel – Gründer und Geschäftsführer von SB-Solutions. Mit SB-Solutions helfe ich kleinen Unternehmen in Mödling und ganz Niederösterreich dabei, online sichtbar zu werden und zu wachsen.</p>
+        <p style="color:var(--muted);font-size:0.95rem;margin-bottom:2rem;line-height:1.75">Mein Anspruch: kein Agentur-Chaos, keine anonymen Ticketsysteme – sondern ein direkter, persönlicher Ansprechpartner, der Ihre Sprache spricht und Ergebnisse liefert.</p>
+        <div class="ueber-stats">
+          <div class="ueber-stat"><span>Webdesign</span></div>
+          <div class="ueber-stat"><span>SEO</span></div>
+          <div class="ueber-stat"><span>Social Media</span></div>
+        </div>
+        <a href="#kontakt"><button class="btn-primary" style="margin-top:2rem">Jetzt kennenlernen →</button></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prozess" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-label reveal">Ablauf</div>
+    <h2 class="reveal">In 4 Schritten zur fertigen Website</h2>
+    <p class="section-sub reveal">Kein komplizierter Prozess – einfach, transparent und auf Sie abgestimmt.</p>
+    <div class="prozess-steps">
+      <div class="prozess-step reveal reveal-delay1">
+        <div class="step-num">01</div>
+        <h3>Erstgespräch</h3>
+        <p>Kostenlos. Wir besprechen Ihre Ziele, Zielgruppe und Wünsche.</p>
+      </div>
+      <div class="prozess-step reveal reveal-delay2">
+        <div class="step-num">02</div>
+        <h3>Konzept &amp; Design</h3>
+        <p>Ich erstelle einen ersten Entwurf – Sie geben Feedback.</p>
+      </div>
+      <div class="prozess-step reveal reveal-delay3">
+        <div class="step-num">03</div>
+        <h3>Umsetzung</h3>
+        <p>Entwicklung, Content-Integration und technische Optimierung.</p>
+      </div>
+      <div class="prozess-step reveal">
+        <div class="step-num">04</div>
+        <h3>Launch &amp; Betreuung</h3>
+        <p>Live-Schaltung und auf Wunsch laufende Betreuung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pakete">
+  <div class="container">
+    <div class="section-label reveal">Pakete</div>
+    <h2 class="reveal">Faire Preise. Kein Kleingedrucktes.</h2>
+    <p class="section-sub reveal" style="max-width:700px">Jedes Unternehmen ist anders – deshalb sind die Preise als Orientierung zu verstehen. Im kostenlosen Erstgespräch finden wir gemeinsam das passende Paket für Ihre Situation. Monatlich kündbar, keine versteckten Kosten.</p>
+    <div class="pakete-grid">
+      <div class="paket-card reveal reveal-delay1">
+        <div class="paket-name">Starter</div>
+        <div class="paket-price">ab €490 <span>einmalig + €50/mo</span></div>
+        <p class="paket-desc">Ideal für den Einstieg ins digitale Business</p>
+        <ul class="paket-features">
+          <li><span class="check">✓</span>One-Page Website</li>
+          <li><span class="check">✓</span>Mobiloptimiert &amp; schnell</li>
+          <li><span class="check">✓</span>Impressum &amp; Datenschutz</li>
+          <li><span class="check">✓</span>Kontaktformular</li>
+          <li><span class="check">✓</span>SEO-Grundoptimierung</li>
+          <li><span class="check">✓</span>Webhosting &amp; Support</li>
+        </ul>
+        <p style="font-size:0.78rem;color:var(--muted);margin-bottom:1.2rem;font-style:italic">* Endpreis nach kostenlosem Erstgespräch</p>
+        <button class="btn-paket" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">Jetzt anfragen</button>
+      </div>
+      <div class="paket-card featured reveal reveal-delay2">
+        <div class="featured-badge">★ Beliebtestes Paket</div>
+        <div class="paket-name">Professional</div>
+        <div class="paket-price">ab €890 <span>+ ab €149/mo</span></div>
+        <p class="paket-desc">Komplette digitale Präsenz mit laufender Betreuung</p>
+        <ul class="paket-features">
+          <li><span class="check">✓</span>Mehrseiten-Website (bis 5 Seiten)</li>
+          <li><span class="check">✓</span>On-Page SEO inklusive</li>
+          <li><span class="check">✓</span>Monatliches Reporting</li>
+          <li><span class="check">✓</span>Social Media (1 Kanal, 8 Posts/mo)</li>
+          <li><span class="check">✓</span>Content-Updates inklusive</li>
+          <li><span class="check">✓</span>Prioritäts-Support</li>
+        </ul>
+        <p style="font-size:0.78rem;color:var(--muted);margin-bottom:1.2rem;font-style:italic">* Endpreis nach kostenlosem Erstgespräch</p>
+        <button class="btn-paket" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">Jetzt anfragen</button>
+      </div>
+      <div class="paket-card reveal reveal-delay3">
+        <div class="paket-name">Premium</div>
+        <div class="paket-price">ab €1.490 <span>+ ab €299/mo</span></div>
+        <p class="paket-desc">Vollständiges digitales Marketing-Paket</p>
+        <ul class="paket-features">
+          <li><span class="check">✓</span>Website nach Maß (unbegrenzt)</li>
+          <li><span class="check">✓</span>Umfassende SEO-Strategie</li>
+          <li><span class="check">✓</span>Social Media (2 Kanäle, 16 Posts/mo)</li>
+          <li><span class="check">✓</span>Google Business Optimierung</li>
+          <li><span class="check">✓</span>Monatl. Strategie-Call</li>
+          <li><span class="check">✓</span>24h Support-Reaktionszeit</li>
+        </ul>
+        <p style="font-size:0.78rem;color:var(--muted);margin-bottom:1.2rem;font-style:italic">* Endpreis nach kostenlosem Erstgespräch</p>
+        <button class="btn-paket" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">Jetzt anfragen</button>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:2.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:1.5rem 2rem;display:flex;gap:1.2rem;align-items:flex-start">
+      <div style="font-size:1.4rem;flex-shrink:0;margin-top:2px">💬</div>
+      <div>
+        <div style="font-size:0.95rem;font-weight:600;margin-bottom:0.4rem;color:var(--text)">Nicht sicher, welches Paket passt?</div>
+        <p style="font-size:0.87rem;color:var(--muted);line-height:1.65;margin:0">Kein Problem – im kostenlosen Erstgespräch schauen wir uns Ihre Situation gemeinsam an und ich erstelle ein individuelles Angebot. Ohne Druck, ohne Fachjargon. <a href="#kontakt" style="color:var(--accent)">Jetzt Termin anfragen →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" style="background:var(--bg2)">
+  <div class="container">
+    <div class="kontakt-wrap">
+      <div class="kontakt-info reveal">
+        <div class="section-label">Kontakt</div>
+        <h2>Lassen Sie uns sprechen</h2>
+        <p>Kostenlose Erstberatung – ich höre mir Ihre Situation an und zeige, was digital möglich ist. Ohne Druck, ohne Fachchinesisch.</p>
+        <div class="kontakt-detail"><span class="kd-icon">📍</span>Mödling, Niederösterreich</div>
+        <div class="kontakt-detail"><span class="kd-icon">✉️</span>office@sb-solutions.at</div>
+        <div class="kontakt-detail"><span class="kd-icon">🌐</span>sb-solutions.at</div>
+      </div>
+      <div class="kontakt-form reveal reveal-delay2">
+        <form id="contactForm" action="https://formspree.io/f/mojppabo" method="POST">
+          <div class="form-row">
+            <div class="form-group"><label for="fname">Vorname</label><input id="fname" type="text" name="vorname" placeholder="Max" required></div>
+            <div class="form-group"><label for="lname">Nachname</label><input id="lname" type="text" name="nachname" placeholder="Mustermann" required></div>
+          </div>
+          <div class="form-group"><label for="email">E-Mail</label><input id="email" type="email" name="email" placeholder="name@firma.at" required></div>
+          <div class="form-group"><label for="firma">Unternehmen (optional)</label><input id="firma" type="text" name="unternehmen" placeholder="Ihre Firma GmbH"></div>
+          <div class="form-group"><label for="msg">Nachricht</label><textarea id="msg" name="nachricht" placeholder="Wie kann ich helfen?" required></textarea></div>
+          <button type="submit" class="form-submit" id="submitBtn">Nachricht senden →</button>
+          <p id="formStatus" style="margin-top:0.8rem;font-size:0.85rem;text-align:center;display:none"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">© 2025 SB-Solutions · Mödling, Niederösterreich</div>
+    <div class="footer-links">
+      <a href="#" onclick="openLegal('impressum');return false">Impressum</a>
+      <a href="#" onclick="openLegal('datenschutz');return false">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+
+
+<script>
+// Cursor glow
+const glow=document.getElementById('cursorGlow');
+document.addEventListener('mousemove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
+
+// Sticky nav
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40)
+});
+
+// Scroll reveal – mit Fallback für mobile Browser
+const reveals=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})
+  },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+  reveals.forEach(el=>io.observe(el));
+  // Sicherheitsnetz: nach 2s alles sichtbar machen
+  setTimeout(()=>reveals.forEach(el=>el.classList.add('visible')),2000);
+} else {
+  reveals.forEach(el=>el.classList.add('visible'));
+}
+
+// Legal pages in new tab
+const legalContent={
+  impressum:`<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Impressum – SB-Solutions</title><style>body{font-family:'Segoe UI',system-ui,sans-serif;background:#090b10;color:#eef1fa;max-width:700px;margin:0 auto;padding:2rem 1.5rem;line-height:1.7}h1{font-size:1.8rem;margin-bottom:0.5rem;color:#fff}h2{font-size:1rem;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em;margin:1.8rem 0 0.5rem}p,li{font-size:0.92rem;color:#7a839e}ul{padding-left:1.2rem}a{color:#4f7fff}.back{display:inline-block;margin-bottom:2rem;color:#4f7fff;font-size:0.88rem}hr{border:none;border-top:1px solid #1e2333;margin:1.5rem 0}</style></head><body><a class="back" onclick="window.close()" href="#">← Zurück</a><h1>Impressum</h1><p>Angaben gemäß § 5 ECG (E-Commerce-Gesetz)</p><hr><h2>Unternehmensinhaber</h2><p>Bruno [Nachname]<br>SB-Solutions<br>Mödling, Niederösterreich, Österreich</p><h2>Kontakt</h2><p>E-Mail: office@sb-solutions.at<br>Web: www.sb-solutions.at</p><h2>Unternehmensgegenstand</h2><p>Webdesign, SEO-Optimierung und Social Media Management für kleine und mittlere Unternehmen.</p><h2>Aufsichtsbehörde / Kammerzugehörigkeit</h2><p>Wirtschaftskammer Niederösterreich (WKO NÖ)<br>Fachgruppe UBIT</p><h2>Online-Streitbeilegung</h2><p>EU-Plattform: <a href="https://ec.europa.eu/consumers/odr" target="_blank">ec.europa.eu/consumers/odr</a></p><h2>Haftungsausschluss</h2><p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für verlinkte externe Inhalte.</p><p style="margin-top:2rem;font-size:0.78rem">Stand: 2025</p></body></html>`,
+  datenschutz:`<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Datenschutz – SB-Solutions</title><style>body{font-family:'Segoe UI',system-ui,sans-serif;background:#090b10;color:#eef1fa;max-width:700px;margin:0 auto;padding:2rem 1.5rem;line-height:1.7}h1{font-size:1.8rem;margin-bottom:0.5rem;color:#fff}h2{font-size:1rem;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em;margin:1.8rem 0 0.5rem}p,li{font-size:0.92rem;color:#7a839e}ul{padding-left:1.2rem;margin-top:0.4rem}a{color:#4f7fff}.back{display:inline-block;margin-bottom:2rem;color:#4f7fff;font-size:0.88rem}hr{border:none;border-top:1px solid #1e2333;margin:1.5rem 0}</style></head><body><a class="back" onclick="window.close()" href="#">← Zurück</a><h1>Datenschutzerklärung</h1><p>Gemäß DSGVO (EU) 2016/679 und österreichischem Datenschutzgesetz (DSG)</p><hr><h2>1. Verantwortlicher</h2><p>Bruno [Nachname], SB-Solutions, Mödling, Niederösterreich<br>office@sb-solutions.at</p><h2>2. Erhobene Daten</h2><ul><li>Server-Logfiles (IP, Browser, Datum) – automatisch durch Hosting-Anbieter</li><li>Kontaktformular: Name, E-Mail, Nachricht</li></ul><h2>3. Zweck der Verarbeitung</h2><p>Kontaktdaten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet (Art. 6 Abs. 1 lit. b DSGVO).</p><h2>4. Speicherdauer</h2><p>Daten werden nur so lange gespeichert wie erforderlich, längstens 3 Jahre.</p><h2>5. Weitergabe an Dritte</h2><p>Keine Weitergabe außer zur Vertragserfüllung oder gesetzlicher Verpflichtung.</p><h2>6. Hosting</h2><p>Netlify (USA, EU-US DPF-zertifiziert) · Domain: World4You (Österreich)</p><h2>7. Ihre Rechte (DSGVO)</h2><ul><li>Auskunft (Art. 15) · Berichtigung (Art. 16) · Löschung (Art. 17)</li><li>Einschränkung (Art. 18) · Datenübertragbarkeit (Art. 20) · Widerspruch (Art. 21)</li></ul><p>Kontakt: office@sb-solutions.at</p><h2>8. Beschwerderecht</h2><p>Datenschutzbehörde, Barichgasse 40–42, 1030 Wien · dsb@dsb.gv.at</p><h2>9. Cookies</h2><p>Keine Tracking-Cookies. Nur technisch notwendige Session-Daten.</p><p style="margin-top:2rem;font-size:0.78rem">Stand: 2025</p></body></html>`
+};
+function openLegal(page){
+  const w=window.open('','_blank');
+  w.document.write(legalContent[page]);
+  w.document.close();
+}
+
+// Formspree AJAX
+const form=document.getElementById('contactForm');
+const status=document.getElementById('formStatus');
+const submitBtn=document.getElementById('submitBtn');
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  submitBtn.disabled=true;submitBtn.textContent='Wird gesendet…';
+  try{
+    const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+    if(res.ok){
+      status.style.display='block';status.style.color='var(--accent2)';
+      status.textContent='✓ Nachricht gesendet! Ich melde mich bald bei Ihnen.';
+      form.reset();submitBtn.textContent='Gesendet ✓';
+    } else {
+      throw new Error();
+    }
+  } catch{
+    status.style.display='block';status.style.color='#f07';
+    status.textContent='Fehler beim Senden. Bitte direkt an office@sb-solutions.at schreiben.';
+    submitBtn.disabled=false;submitBtn.textContent='Nachricht senden →';
+  }
+});
+
+// Download
+function downloadSite(){
+  const html=document.documentElement.outerHTML;
+  const blob=new Blob([html],{type:'text/html'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='sb-solutions.html';
+  a.click();
+}
+</script>
+</body>
+</html>

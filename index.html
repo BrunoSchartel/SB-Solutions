@@ -148,9 +148,12 @@ h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;margin-bottom:1rem;line-he
 
 /* PAKETE */
 #pakete{background:var(--bg2)}
-.pakete-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.5rem;align-items:start}
+.pakete-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch}
+@media(max-width:800px){.pakete-grid{grid-template-columns:1fr}}
 .paket-card{display:flex;flex-direction:column}
-.paket-features{flex:1}
+.paket-features{flex:1;margin-bottom:0}
+.paket-card .btn-paket{margin-top:auto}
+.paket-card p[style*="italic"]{margin-top:1rem}
 .paket-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:2rem;position:relative;transition:all 0.35s}
 .paket-card:hover{transform:translateY(-5px)}
 .paket-card.featured{border-color:rgba(79,127,255,0.5);background:linear-gradient(160deg,rgba(79,127,255,0.06),var(--bg3))}
